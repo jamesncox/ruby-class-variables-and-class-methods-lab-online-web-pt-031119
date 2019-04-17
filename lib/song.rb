@@ -38,12 +38,25 @@ class Song
     genre_count
   end
   
-  def self.artist_count
-    artist_count = Hash.new(0)
-    @@artists.each do |artist|
-      artist_count[artist] += 1
-    end
-    artist_count
+  # def self.artist_count
+  #   artist_count = Hash.new(0)
+  #   @@artists.each do |artist|
+  #     artist_count[artist] += 1
+  #   end
+  #   artist_count
+  # end
+  
+   def self.genre_count
+    genre_count=Hash.new(0)
+    @@genres.each do |genre, value|
+      if genre_count.has_key?(genre)
+        genre_count[genre]+=1
+        #binding.pry
+        else
+        genre_count[genre] = 1
+        end
+        end
+        genre_count
   end
   
 end
